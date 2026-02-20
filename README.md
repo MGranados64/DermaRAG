@@ -47,7 +47,7 @@ streamlit run app.py
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT - mira el archivo LICENSE para detalles.
+Este proyecto está bajo la Licencia MIT - Puedes mira el archivo [LICENSE](https://github.com/MGranados64/DermaRAG/blob/main/LICENSE) para detalles.
 
 ---
 
