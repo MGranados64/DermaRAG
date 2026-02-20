@@ -33,7 +33,7 @@ DermaRAG/
 ## 🛠️ Instalación y Uso (Local)
 1. Clona este repositorio:
 ```bash
-git clone [https://github.com/tu-usuario/DermaRAG.git](https://github.com/tu-usuario/DermaRAG.git)
+git clone [https://github.com/MGranados64/DermaRAG.git](https://github.com/MGranados64/DermaRAG.git) 
 ```
 2. Instala las dependencias:
 ```bash
