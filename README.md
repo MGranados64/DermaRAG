@@ -9,15 +9,15 @@ DermaRAG es una prueba de concepto (PoC) académica que integra Visión Computac
 
 ## 📁 Estructura del proyecto
 
-```text
+```
 DermaRAG/
-│
 ├── .gitignore              # Reglas de lo que NO se debe subir
 ├── LICENSE                 # Nuestra protección legal
 ├── README.md               # La presentación del proyecto
 ├── app.py                  # Código principal de Streamlit
 ├── RAG_tool.py             # Código de la herramienta
 └── requirements.txt        # Lista de librerías
+```
 ---
 
 ## 🚀 Características
@@ -32,17 +32,17 @@ DermaRAG/
 
 ## 🛠️ Instalación y Uso (Local)
 1. Clona este repositorio:
-
+```bash
 git clone [https://github.com/tu-usuario/DermaRAG.git](https://github.com/tu-usuario/DermaRAG.git)
-
+```
 2. Instala las dependencias:
-
+```bash
 pip install -r requirements.txt
-
+```
 3. Ejecuta la app:
-
+```bash
 streamlit run app.py
-
+```
 ---
 
 ## 📄 Licencia
