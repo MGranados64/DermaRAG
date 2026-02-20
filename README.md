@@ -53,4 +53,4 @@ Este proyecto está bajo la Licencia MIT - mira el archivo LICENSE para detalles
 
 ## ✨ Créditos
 
-Creado por Miguel Granados. Este repositorio está abierto para mejoras por parte de la comunidad.
+Creado por [Miguel Granados](https://github.com/MGranados64). Este repositorio está abierto para mejoras por parte de la comunidad.
