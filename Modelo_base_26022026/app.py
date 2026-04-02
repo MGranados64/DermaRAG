@@ -420,7 +420,7 @@ class PDFReport(FPDF):
 
 st.markdown("""
     <div class="header-container">
-        <h1 style="color: #2c3e50 !important;">🏥 DermaRAG - Sistema Multiagente de Diagnóstico Dermatológico</h1>
+        <h1 style="color: white !important; font-size: clamp(1.1rem, 5vw, 2rem); line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">🏥 DermaRAG - Sistema Multiagente de Diagnóstico Dermatológico</h1>
         <p style="color: #e74c3c !important;">IA Explicable con Retrieval-Augmented Generation | Guías AAD/BAD/NCCN</p>
         <div style="background: #28a745; color: white; padding: 5px 15px; border-radius: 20px; display: inline-block; font-size: 12px; margin-top: 10px; font-weight: bold;">MVP v1.0 - Prototipo Funcional</div>
     </div>
