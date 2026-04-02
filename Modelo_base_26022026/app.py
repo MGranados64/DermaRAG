@@ -161,6 +161,21 @@ st.markdown("""
     div.stButton > button p {
         color: white !important;
     }
+    /* RESPONSIVE MÓVIL */
+    @media (max-width: 768px) {
+        .block-container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            max-width: 100% !important;
+        }
+        .header-container h1 {
+            font-size: 1.3rem !important;
+            line-height: 1.4 !important;
+        }
+        .header-container p {
+            font-size: 0.85rem !important;
+        }
+    }
     </style>
 """, unsafe_allow_html=True)
 
