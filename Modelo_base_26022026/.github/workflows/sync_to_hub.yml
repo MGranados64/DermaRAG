@@ -1,22 +1,48 @@
-steps:
-      - uses: actions/checkout@v3
+name: Sync Selected Files to Hugging Face
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
-      - name: Push app.py to Hugging Face
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Hugging Face Hub
+        run: pip install huggingface_hub
+
+      - name: Upload specific files
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          # 1. Instalar la librería de Hugging Face
-          pip install huggingface_hub
-          
-          # 2. Subir SOLO el archivo app.py (o los que tú quieras)
           python -c "
           from huggingface_hub import HfApi
+          import os
+
           api = HfApi()
-          api.upload_file(
-              path_or_fileobj='app.py',
-              path_in_repo='app.py',
-              repo_id='MGC1991MF/DermaRAG-DEMO',
-              repo_type='space',
-              token='$HF_TOKEN'
-          )
+          repo_id = 'MGC1991MF/DermaRAG-DEMO' # <-- CAMBIA ESTO
+          
+          files_to_upload = ['app.py', 'requirements.txt'] # Lista de archivos a sincronizar
+
+          for file in files_to_upload:
+              if os.path.exists(file):
+                  print(f'Subiendo {file}...')
+                  api.upload_file(
+                      path_or_fileobj=file,
+                      path_in_repo=file,
+                      repo_id=repo_id,
+                      repo_type='space',
+                      token=os.environ['HF_TOKEN']
+                  )
+                  print(f'{file} subido con éxito.')
+              else:
+                  print(f'Advertencia: {file} no encontrado en el repo, saltando...')
           "
