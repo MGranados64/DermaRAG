@@ -1,21 +1,22 @@
-name: Sync to Hugging Face hub
-on:
-  push:
-    branches: [main]
-
-  # Esto permite ejecutar la sincronización manualmente desde la pestaña Actions
-  workflow_dispatch:
-
-jobs:
-  sync-to-hub:
-    runs-on: ubuntu-latest
-    steps:
+steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          lfs: true
-      - name: Push to hub
+
+      - name: Push app.py to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push --force https://tu_usuario:$HF_TOKEN@huggingface.co/spaces/MGC1991MF/DermaRAG-DEMO main
+          # 1. Instalar la librería de Hugging Face
+          pip install huggingface_hub
+          
+          # 2. Subir SOLO el archivo app.py (o los que tú quieras)
+          python -c "
+          from huggingface_hub import HfApi
+          api = HfApi()
+          api.upload_file(
+              path_or_fileobj='app.py',
+              path_in_repo='app.py',
+              repo_id='MGC1991MF/DermaRAG-DEMO',
+              repo_type='space',
+              token='$HF_TOKEN'
+          )
+          "
