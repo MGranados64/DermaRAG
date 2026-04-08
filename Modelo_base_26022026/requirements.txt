@@ -1,26 +1,16 @@
-# --- Framework de Interfaz ---
 streamlit
-
-# --- Procesamiento de Imágenes y Visión ---
-pillow
-numpy
-opencv-python-headless
-matplotlib
 torch
 torchvision
-
-# --- Orquestación de Agentes (Multi-Agente) ---
+Pillow
+numpy
+matplotlib
+opencv-python-headless
 crewai
+crewai[litellm]
+fpdf
+datasets
+ragas
 langchain-huggingface
 langchain-openai
-
-# --- Evaluación y Métricas (RAGas) ---
-ragas
-datasets
-
-# --- Utilidades y Documentación ---
-fpdf
+sentence-transformers
 pysqlite3-binary
-
-# --- Conectores y Modelos de Lenguaje ---
-groq
